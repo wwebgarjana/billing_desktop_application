@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NondVahi Dashboard</title>
+  <link rel="stylesheet" href="../css_components/dashboard.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <div class="dashboard-cards">
+      <div class="dashboard-card dashboard-sales">
+        <h2 style="text-align:center;">Total Sales</h2>
+        <h2 style="text-align:center;">₹0</h2>
+      </div>
+
+      <div class="dashboard-card dashboard-profit">
+        <h2 style="text-align:center;">Total Profit</h2>
+        <h2 style="text-align:center;">₹0</h2>
+      </div>
+
+      <div class="dashboard-card dashboard-lowstock">
+        <h2 style="text-align:center;">Low Stock Items</h2>
+        <h2 style="text-align:center;">5</h2>
+      </div>
+    </div>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button onclick="showTab('lastBilling')" class="tab active">Last Billing</button>
+  <button onclick="showTab('totalRemain')" class="tab">Total Remain</button>
+  <button onclick="showTab('lowStock')" class="tab">Low Stock</button>
+  <button onclick="showTab('monthlyRevenue')" class="tab">Monthly Revenue</button>
+</div>
+
+<!-- Last Billing -->
+
+<div id="lastBilling" class="tab-content active">
+</div>
+
+
+<!-- Total Remain -->
+<div id="totalRemain" class="tab-content">
+ 
+<div class="summary">
+    <div class="summary-card">
+      <h3>Total Remaining</h3>
+      <h2 id="totalRemainingAmount">₹0</h2>
+    </div>
+
+    <div class="summary-card">
+      <h3>Remaining Customers</h3>
+      <h2 id="remainingCustomerCount">0</h2>
+    </div>
+  </div>
+
+  <table id="remainingTable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Bill No</th>
+      <th>Customer Name</th>
+      <th>Total</th>
+      <th>Remaining</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="remainingTableBody">
+    
+    <!-- JS inserts rows here -->
+  </tbody>
+</table>
+
+
+
+<div id="payModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Pay Bill</h3>
+      <p>Total Amount: ₹<span id="modalTotal">0</span></p>
+      <p>Remaining Amount: ₹<span id="modalRemaining">0</span></p>
+      <input type="number" id="payAmount" placeholder="Enter amount to pay" />
+      <p id="payError" class="error-msg"></p>
+      <button id="confirmPayBtn">Pay</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Low Stock -->
+<div id="lowStock" class="tab-content">
+  <h2>Low Stock Alert</h2>
+
+  <table id="lowStockTable">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Company</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody id="lowStockBody">
+      <!-- Auto Rows Insert JS -->
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Monthly Revenue -->
+<div id="monthlyRevenue" class="tab-content">
+  <h2>Monthly Revenue</h2>
+
+  <div class="filter">
+    <select id="filterYear"></select>
+    <select id="filterMonth"></select>
+    <button id="searchMonthly" class="search-btn">Search</button>
+  </div>
+
+  <!-- Output Boxes -->
+  <div class="monthly-summary">
+    <div class="box">
+      <h3>Total Revenue</h3>
+      <p id="totalRevenue">₹0</p>
+    </div>
+
+    <div class="box">
+      <h3>Total Profit</h3>
+      <p id="totalProfit">₹0</p>
+    </div>
+
+    <div class="box">
+      <h3>Total Customers</h3>
+      <p id="totalCustomers">0</p>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <table id="monthlyTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Bill No</th>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Profit</th>
+      </tr>
+    </thead>
+    <tbody id="monthlyTableBody"></tbody>
+  </table>
+
+</div>
+
+
+<script src="../js_components/dashboard.js"></script>
+</body>
+</html>

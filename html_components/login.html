@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NondVahi - Login</title>
+  <link rel="stylesheet" href="../css_components/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="nv-login-container">
+  <div class="nv-login-card">
+
+    <!-- LEFT SIDE -->
+    <div class="nv-left-panel">
+      <img src="../images/nondvahi.png" alt="NondVahi" class="nv-logo">
+      <h2 class="nv-app-name">NondVahi</h2>
+      <p class="nv-app-tagline">Billing Application</p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="nv-right-panel fade-in">
+      <div class="nv-form-box">
+        <h3 class="nv-title">Login to your account</h3>
+
+        <div class="nv-input-group">
+          <input type="text" id="login_mobile" placeholder="Mobile Number" maxlength="10">
+          <p class="nv-error" id="mobile_error"></p>
+        </div>
+
+        <div class="nv-input-group nv-password-box">
+          <input type="password" id="login_password" placeholder="Password">
+          <span class="nv-eye" id="togglePassword">
+  <img style="width: 40px; height: 40px;"
+    id="eyeIcon"
+    src="../images/eye_open.png"
+    alt="Show Password"
+  />
+</span>
+
+          <p class="nv-error" id="password_error"></p>
+        </div>
+
+       <div class="nv-forgot">
+  <a href="../html_components/reset_password.html">Forgot Password?</a>
+</div>
+
+
+        <button id="login_submitbtn" class="nv-login-btn">Login</button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Login JS -->
+<script src="../js_components/login.js"></script>
+
+</body>
+</html>

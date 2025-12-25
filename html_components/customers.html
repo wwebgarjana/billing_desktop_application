@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customers</title>
+  <link rel="stylesheet" href="../css_components/customers.css" />
+</head>
+<body>
+
+<div class="customers-page">
+
+  <h3 class="customers-title">All Customers</h3>
+
+  <div class="customers-search">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search customer..."
+    />
+  </div>
+
+  <div class="customers-list" id="customersList"></div>
+
+  <div class="customer-details" id="customerDetails" style="display:none;">
+    <h4 id="customerName"></h4>
+    <p>
+      Total Amount:
+      <strong id="totalAmount"></strong>
+    </p>
+    <p>
+      Total Remaining:
+      <strong id="totalRemaining"></strong>
+    </p>
+  </div>
+
+</div>
+
+<script src="../js_components/customers.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bills Page</title>
+  <link rel="stylesheet" href="../css_components/bills.css" />
+  <style>
+    /* Extra Charges Checkbox and Label Alignment */
+    .extra-row {
+      display: flex;
+      align-items: center;
+      margin-top: 10px; /* spacing from previous input */
+      gap: 8px; /* space between checkbox and label */
+    }
+
+    .extra-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin: 0; /* remove default spacing */
+    }
+
+    .extra-row label {
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <button class="bills-fab" id="openNewBill">+ New Bill</button> -->
+
+  <div class="newbill-popup" id="newBillPopup">
+    <div class="newbill-card">
+
+      <div class="newbill-section">
+        <h4>Customer Details</h4>
+        
+        <label>Customer Mobile No:</label>
+       <input 
+       type="number" 
+      placeholder="Mobile" 
+      oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);" 
+/>
+        <span id="mobileErr" style="color:red; font-size:12px; display:none;">Mobile number is required</span>
+       <label>Customer Name:</label>
+        <input type="text" placeholder="Name" />
+        <span id="nameErr" style="color:red; font-size:12px; display:none;">Name is required</span>
+       
+        <label>Customer Address:</label>
+        <input type="text" placeholder="Address" />
+      </div>
+
+      <div class="product-inputs">
+
+        <!-- LEFT SIDE -->
+        <div class="product-left">
+          <h4>Add Product Details</h4>
+
+          <label>Product Name:</label>
+          <input type="text" placeholder="Product Name" list="productOptions" />
+
+          <label>Company Name:</label>
+          <!-- <input type="text" id="companyInput" placeholder="Company Name" list="companyOptions" />
+          <datalist id="companyOptions"></datalist> -->
+          <select id="companySelect">
+          </select>
+
+
+          <label>Product Rate:</label>
+          <input type="number" placeholder="Rate (₹)" />
+
+          <label>Buying Price:</label>
+          <input type="number" placeholder="Buying Price (₹)" />
+
+           </div>
+
+        <!-- RIGHT SIDE COLUMN -->
+        <div class="product-right">
+          <h5>Quantity</h5>
+          <div class="qty-control">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+        </div>
+
+      </div>
+
+   <button class="add-product-btn">Add Product</button>
+
+
+     <!-- Extra Charges -->
+          <div class="extra-row">
+            <input type="checkbox" id="chargesEnable" />
+            <label for="chargesEnable">Extra Charges</label>
+          </div>
+
+        <!-- Charges Section -->
+      <div id="chargesContainer" style="display:none; margin-top:10px;">
+        <div class="charge-input">
+          <input type="text" id="chargeTitle" placeholder="Enter Title" />
+          <input type="number" id="chargeAmount" placeholder="Enter Charges" />
+          <button id="addChargeBtn">Add</button>
+        </div>
+        <div id="chargesList"></div>
+      </div>
+      <button class="add-charges-btn">Add Charges</button>
+
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Product Name</th>
+            <th>Company</th>
+            <th>Qty</th>
+            <th>Rate</th>
+            <th>GST</th>
+            <th>Charge</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+
+      <div class="payment-box">
+        <h4>Payment Details</h4>
+        <p id="subtotalText">Subtotal: ₹0</p>
+        <!-- <p id="gstText">GST: ₹0</p> -->
+        <!-- <p id="remainingText">Remaining: ₹0</p>  -->
+        <p id="chargesBreakup"></p>
+        <p id="totalText"><strong>Total: ₹0</strong></p>
+
+        <label for="paymentType" class="payment-label" style="margin-top: 15px;">Select Payment Type:</label><br><br>
+        <select id="paymentType" class="payment-select" style="width: 100%; padding: 5px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+          <option value="UPI">UPI</option>
+          <option value="Cash">Cash</option>
+          <option value="Other">Other</option>
+        </select><br><br>
+
+        <label>Paid Amount:</label><br><br>
+        <input type="number" id="totalDisplay" placeholder="Enter Paid Amount" style="width: 95%; padding: 5px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;" />
+      </div>
+
+      <button class="generate-bill-btn">Generate Bill</button>
+ 
+    <!-- <button class="close-newbill" id="closeNewBill">×</button> -->
+
+    </div>
+  </div>
+
+</div>
+
+<script src="../js_components/bills.js"></script>
+</body>
+</html>

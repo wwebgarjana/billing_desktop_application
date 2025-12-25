@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NondVahi Billing App</title>
+  <link rel="stylesheet" href="../css_components/sidebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+  <img src="../images/nondvahi.png"  class="logo-img" />
+  <h2>NondVahi</h2>
+  <p>Billing Application</p>
+</div>
+
+
+  <ul class="menu">
+     <li onclick="navigate('about.html')" class="active">
+      <i class="fa-solid fa-info-circle"></i> About Us
+    </li>
+    <li onclick="navigate('dashboard.html')" class="active">
+      <i class="fa-solid fa-house"></i> Dashboard
+    </li>
+    <li onclick="navigate('bills.html')">
+      <i class="fa-solid fa-file-invoice"></i> New Bill
+    </li>
+     <li onclick="navigate('items.html')">
+      <i class="fa-solid fa-box"></i> Items
+    </li>
+    <li onclick="navigate('stock.html')">
+      <i class="fa-solid fa-cubes"></i> Stock
+    </li>
+    <li onclick="navigate('all_bills.html')">
+      <i class="fa-solid fa-file"></i> All Bills
+    </li>
+    <li onclick="navigate('customers.html')">
+      <i class="fa-solid fa-users"></i> Customers
+    </li>
+    <li onclick="navigate('reports.html')">
+      <i class="fa-solid fa-chart-line"></i> Reports
+    </li>
+     <li onclick="navigate('reset_password.html')">
+      <i class="fa-solid fa-gear"></i> Reset Password
+    </li>
+    <br><br><br><br><br>
+     <button onclick="navigate('login.html')">
+      <i class="fas fa-sign-out-alt"></i> Logout
+     </button>
+  </ul>
+</div>
+
+<div class="content">
+  <iframe id="pageFrame" src="../html_components/dashboard.html"></iframe>
+</div>
+
+<script src="../js_components/sidebar.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NondVahi Billing App</title>
+  <link rel="stylesheet" href="../css_components/sidebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <img src="../images/nondvahi.png"  class="logo-img" />
+    <h2>NondVahi</h2>
+    <p>Billing Application</p>
+  </div>
+
+  <ul class="menu">
+    <li onclick="navigate('dashboard.html', this)" class="active">
+      <i class="fa-solid fa-house"></i> Dashboard
+    </li>
+    <li onclick="navigate('bills.html', this)">
+      <i class="fa-solid fa-file-invoice"></i> Bills
+    </li>
+    <li onclick="navigate('items.html', this)">
+      <i class="fa-solid fa-box"></i> Items
+    </li>
+    <li onclick="navigate('customers.html', this)">
+      <i class="fa-solid fa-users"></i> Customers
+    </li>
+    <li onclick="navigate('reports.html', this)">
+      <i class="fa-solid fa-chart-line"></i> Reports
+    </li>
+  </ul>
+</div>
+
+
+<div id="content" class="content"></div>
+
+<script src="../js_components/sidebar.js"></script>
+</body>
+</html> -->
+

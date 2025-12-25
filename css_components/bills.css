@@ -1,0 +1,390 @@
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f6fa;
+}
+
+
+ .newbill-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;           /* JS se open/close */
+  z-index: 9999;
+}
+.newbill-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 600px;
+  max-width: 95%;
+
+  height: 90vh;            /* 👈 thodi kam height */
+  max-height: 80vh;
+
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+
+  overflow-y: auto;        /* ✅ vertical scroll */
+  overflow-x: hidden;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    overflow-x: auto;
+   white-space: nowrap;
+}
+.newbill-card::-webkit-scrollbar {
+  width: 6px;
+   height: 6px; 
+}
+
+.newbill-card::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.newbill-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.close-newbill{
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-size:20px;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+
+/* ================= CLOSE BUTTON ================= */
+.close-newbill {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+}
+
+.close-newbill:hover {
+  color: red;
+}
+
+.newbill-section {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* label | input */
+  align-items: center;
+  row-gap: 10px; /* thoda zyada gap for input + error */
+  column-gap: 10px; 
+}
+
+.newbill-section h4 {
+  grid-column: 1 / -1;
+  margin-bottom: 15px;
+}
+
+.newbill-section label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.newbill-section input {
+  width: 90%;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2px; /* small gap between input and error message */
+}
+
+.newbill-section span {
+  grid-column: 2 / 3; /* make span align with input column */
+  margin-top: 0;       /* just below input */
+  display: block;
+}
+
+
+/* ================= PRODUCT INPUTS ================= */
+.product-inputs {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* label | input */
+  align-items: center;
+   row-gap: 5px;
+  column-gap: 5px; 
+}
+
+.product-inputs h4 {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+
+.product-inputs label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.product-inputs input {
+  width: 90%;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.product-inputs select {
+  width: 97%;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ================= QTY CONTROL ================= */
+.qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.qty-control button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.qty-control span {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ================= ADD PRODUCT BUTTON ================= */
+.add-product-btn {
+  grid-column: span 2;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.add-charges-btn {
+  grid-column: span 2;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.add-product-btn:hover {
+  background: #218838;
+}
+
+/* ================= PRODUCT TABLE ================= */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+ 
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.product-table th {
+  background: #f2f2f2;
+}
+
+/* ================= PAYMENT BOX ================= */
+.payment-box {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+ 
+}
+
+.payment-box h4 {
+  margin-bottom: 10px;
+}
+
+.payment-box p {
+  
+  font-size: 14px;
+}
+.payment-box label {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* ================= GENERATE BILL BUTTON ================= */
+.generate-bill-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.generate-bill-btn:hover {
+  background: #0056b3;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .product-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .add-product-btn {
+    grid-column: span 1;
+  }
+}
+
+.charge-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.charge-row {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-inputs {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 20px;
+  width: 100%;
+}
+
+/* LEFT */
+.product-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* RIGHT */
+.product-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* QTY */
+.qty-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+}
+
+.qty-control button {
+  width: 100%;
+  height: 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qty-control button:first-child {
+  background: #ff3b3b;
+  color: #fff;
+}
+
+.qty-control button:last-child {
+  background: #0065ff;
+  color: #fff;
+}
+
+.qty-control span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Extra Charges Checkbox and Label Alignment */
+.product-left .extra-row {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* spacing from previous input */
+  gap: 8px; /* space between checkbox and label */
+}
+
+.product-left .extra-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0; /* remove default spacing */
+}
+
+.product-left .extra-row label {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* CHARGES SECTION BELOW FULL WIDTH */
+#chargesContainer {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.charge-input {
+  display: grid;
+  grid-template-columns: 1fr 120px auto;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+#addChargeBtn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ADD PRODUCT BTN */
+.add-product-btn {
+  margin-top: 20px;
+  background: green;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+}

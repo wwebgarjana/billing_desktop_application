@@ -1,0 +1,261 @@
+/* --------------------------- */
+/*        MAIN LAYOUT          */
+/* --------------------------- */
+.nv-login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #dff3ff, #b9e5ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.nv-login-card {
+  width: 900px;
+  background: #ffffff;
+  border-radius: 18px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #00000035;
+  animation: slideUp 0.7s ease-out;
+}
+
+/* --------------------------- */
+/*        LEFT PANEL           */
+/* --------------------------- */
+.nv-left-panel {
+  width: 40%;
+  background: #32007c;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.nv-logo {
+  width: 150px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 10px #ffffff80);
+}
+
+.nv-app-name {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.nv-app-tagline {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* --------------------------- */
+/*         RIGHT PANEL         */
+/* --------------------------- */
+.nv-right-panel {
+  width: 60%;
+  padding: 50px;
+  background: #ffffff;
+}
+
+.fade-in {
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+.nv-form-box {
+  width: 100%;
+}
+
+.nv-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #32007c;
+}
+
+/* --------------------------- */
+/*        INPUT STYLING        */
+/* --------------------------- */
+.nv-input-group {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.nv-input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.nv-input-group input:focus {
+  border-color: #4e0eff;
+  box-shadow: 0 0 8px #4e0eff55;
+}
+
+/* Password eye */
+/* .nv-password-box {
+  position: relative;
+}
+
+.nv-eye {
+  position: absolute;
+  right: 14px;
+  top: 25px;
+  cursor: pointer;
+  font-size: 20px;
+} */
+
+.nv-password-box {
+  position: relative;
+  width: 100%;
+}
+
+.nv-password-box input {
+  width: 100%;
+  padding: 12px 45px 12px 12px; /* right padding for eye */
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.nv-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nv-eye img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Added for error positioning */
+.nv-password-box .nv-error {
+  position: absolute;
+  left: 0;
+  bottom: -18px; /* adjust for spacing under input */
+  color: red;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+
+
+
+/* Error message */
+.nv-error {
+  color: red;
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+/* --------------------------- */
+/*        BUTTONS              */
+/* --------------------------- */
+.nv-login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #4e0eff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.nv-login-btn:hover {
+  background: #3500b3;
+}
+
+/* Forgot */
+.nv-forgot a {
+  font-size: 14px;
+  color: #4e0eff;
+  text-decoration: none;
+}
+
+/* Register text */
+.nv-register {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.nv-register span {
+  color: #4e0eff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --------------------------- */
+/*        ANIMATIONS           */
+/* --------------------------- */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------- */
+/*        RESPONSIVE           */
+/* --------------------------- */
+@media (max-width: 768px) {
+  .nv-login-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nv-left-panel {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .nv-right-panel {
+    width: 100%;
+    padding: 30px;
+  }
+}
+.nv-input-group {
+    margin-bottom: 25px; /* more space below the input box */
+    position: relative;
+}
+
+.nv-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px; /* distance from the input */
+    margin-bottom: 0px; /* avoid extra spacing below */
+}

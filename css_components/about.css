@@ -1,0 +1,73 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.about-container {
+  max-width: 700px;
+  margin: 10px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #043158;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #1e88e5;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.info-list li i {
+  color: #062f53;
+  margin-right: 12px;
+  width: 25px;
+  text-align: center;
+}
+
+.shop-info {
+  background: #e3f2fd;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+}

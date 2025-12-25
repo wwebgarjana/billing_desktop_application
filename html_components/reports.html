@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Reports</title>
+  <link rel="stylesheet" href="../css_components/reports.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="reports-page">
+
+  <h2 class="reports-title">Business Reports</h2>
+
+ 
+  <div class="reports-filters">
+    <select id="yearSelect">
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+    </select>
+
+    <select id="monthSelect">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+
+    <button class="search-btn" id="searchBtn">Search</button>
+  </div>
+  
+
+  
+  <div class="reports-charts">
+
+   
+    <div class="chart-box lowstock-alert">
+      <h3>Low Stock Alert</h3>
+
+      <div class="lowstock-list">
+        <div class="lowstock-header">
+          <p>Product Name</p>
+          <p>Company Name</p>
+          <p>Stock</p>
+        </div>
+
+        <div id="lowStockRows"></div>
+      </div>
+    </div>
+
+   
+    <div class="chart-box">
+      <h3>Monthly Sales</h3>
+      <canvas id="salesLineChart"></canvas>
+    </div>
+
+   
+    <div class="chart-box">
+      <h3>Profit Comparison</h3>
+      <canvas id="profitBarChart"></canvas>
+    </div>
+
+  </div>
+
+  
+
+</div>
+
+<script src="../js_components/reports.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Reports</title>
+  <link rel="stylesheet" href="../css_components/reports.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="reports-page">
+
+  <h2 class="reports-title">Business Reports</h2>
+
+  <!-- Filters -->
+  <div class="reports-filters">
+    <select id="yearSelect"></select>
+    <select id="monthSelect"></select>
+    <button class="search-btn" id="searchBtn">Search</button>
+  </div>
+  
+
+  <!-- Charts Section -->
+  <div class="reports-charts">
+
+    <!-- Low Stock Alert -->
+    <div class="chart-box lowstock-alert">
+      <h3>Low Stock Alert</h3>
+      <div class="lowstock-list">
+        
+
+        <div id="lowStockRows"></div>
+      </div>
+    </div>
+
+
+
+
+    <!--Total remainsection-->
+
+    <div class="chart-box">
+      <h3>Total Sales vs Total Remaining</h3>
+      <canvas id="salesVsRemainChart"></canvas>
+    </div>
+
+
+    <!-- Line Chart -->
+    <div class="chart-box">
+      <h3>Monthly Sales</h3>
+      <canvas id="salesLineChart"></canvas>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="chart-box">
+      <h3>Profit Comparison</h3>
+      <canvas id="profitBarChart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="../js_components/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f6fa;
+}
+
+.customers-page{
+  padding:20px;
+}
+
+.customers-title{
+  margin-bottom:10px;
+}
+
+.customers-search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  margin-bottom:15px;
+}
+
+.customers-list{
+  background:#fff;
+  border-radius:8px;
+  padding:10px;
+}
+
+.customer-item{
+  padding:10px;
+  border-bottom:1px solid #eee;
+  cursor:pointer;
+}
+
+.customer-item:last-child{
+  border-bottom:none;
+}
+
+.customer-item.active{
+  background:#e8f5e9;
+  font-weight:bold;
+}
+
+.customer-details{
+  margin-top:15px;
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+}
+
+
+
+
+
+/* Page wrapper */
+.customers-page {
+  padding: 16px;
+  background: #f6f7fb;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Title */
+.customers-title {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Search box */
+.customers-search input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* List container */
+.customers-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 0;
+}
+
+/* Single customer row */
+.customer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Vertical spacing */
+.customer-item + .customer-item {
+  margin-top: 6px;
+}
+
+/* Hover */
+.customer-item:hover {
+  background: #f2f4ff;
+}
+
+/* Profile icon */
+.customer-avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #e3e9ff;
+  color: #3b5bdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Name text */
+.customer-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}

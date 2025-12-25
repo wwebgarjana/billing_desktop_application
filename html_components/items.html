@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Items Inventory</title>
+  <link rel="stylesheet" href="../css_components/items.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+</head>
+<body>
+
+<div class="items-page">
+
+  <div class="items-header">
+    <h3>Items Inventory</h3>
+    <button class="add-item-btn" id="addItemBtn">
+      <i class="fa fa-plus"></i> Add Item
+    </button>
+  </div>
+
+  <div class="items-table">
+    <div class="items-header-row">
+      <p>Sr No</p>
+      <p>Product Name</p>
+      <p>Company Name</p>
+      <p>Buy</p>
+      <p>Sell</p>
+      <p>Stock</p>
+      <p>Actions</p>
+    </div>
+
+    <div id="itemsBody"></div>
+  </div>
+
+</div>
+
+
+<div class="additem-popup" id="addItemPopup" style="display:none;">
+  <div class="additem-overlay"></div>
+  <div class="additem-card">
+    <h2>Add New Item</h2>
+
+    <label>Product ID *</label>
+    <input type="number" id="productId" placeholder="Enter Product ID" required />
+    <small class="error-text" id="productIdError"></small>
+
+   <label>Product Name *</label>
+    <input type="text" id="productName" placeholder="Enter Product Name" required />
+     <small class="error-text" id="productNameError"></small>
+
+    <label>Company Name *</label>
+    <input type="text" id="companyName" placeholder="Enter Company Name" required />
+    <small class="error-text" id="companyNameError"></small>
+
+    <label>Buying Price *</label>
+    <input type="number" id="buyingPrice" placeholder="Enter Buying Price" required />
+    <small class="error-text" id="buyingPriceError"></small>
+
+    <label>Selling Price *</label>
+    <input type="number" id="sellingPrice" placeholder="Enter Selling Price" required />
+    <small class="error-text" id="sellingPriceError"></small>
+
+    <label>Quantity *</label>
+    <input type="number" id="quantity"  min="0" placeholder="Enter Quantity" required />
+   
+
+    <label>Primary Unit *</label>
+    <input type="text" id="primaryUnit" placeholder="Kg / Litre / Piece" required />
+     <small class="error-text" id="primaryUnitError"></small>
+    
+   <!-- GST -->
+<div class="toggle-row">
+  <label class="toggle-label">
+    <input type="checkbox" id="gstEnable" />
+    <span>GST (%)</span>
+  </label>
+  <input
+    type="number"
+    id="gstValue"
+    placeholder="Enter GST %"
+    class="toggle-input"
+    style="display:none;"
+  />
+</div>
+
+<!-- Handling Charges -->
+<div class="toggle-row">
+  <label class="toggle-label">
+    <input type="checkbox" id="handlingEnable" />
+    <span>Handling Charges</span>
+  </label>
+  <input
+    type="number"
+    id="handlingValue"
+    placeholder="Enter Handling Charges"
+    class="toggle-input"
+    style="display:none;"
+  />
+</div>
+
+
+    <div class="additem-actions">
+      <button class="additem-save" id="saveItemBtn">Save</button>
+      <button class="additem-cancel" id="cancelItemBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js_components/items.js"></script>
+
+</body>
+</html> 
+
+

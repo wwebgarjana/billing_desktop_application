@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Preview</title>
+  <link rel="stylesheet" href="../css_components/preview.css">
+  <!-- Include jsPDF -->
+<!-- jsPDF and AutoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+
+</head>
+<body>
+<button id="exitPdfBtn" style="display:none;">✕ Close PDF View</button>
+<div class="invoice-page">
+
+  <!-- HEADER -->
+  <div class="invoice-header">
+    <button id="invoiceBack">← Back</button>
+  </div>
+
+
+  <div class="bill-row">
+    <span id="invoiceBillNo">Bill No: NEW</span>
+    <span id="invoiceDate">Date:</span>
+  </div>
+
+  <!-- CUSTOMER -->
+  <div class="customer-info">
+    <h3>Customer Details</h3>
+    <p><b>Customer Name :</b> <span id="custName"></span></p>
+    <p><b>Mobile No :</b> <span id="custMobile"></span></p>
+  </div>
+
+  <!-- TABLE -->
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Product</th>
+        <th>Company</th>
+        <th>Qty</th>
+        <th>Rate</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="invoiceBody"></tbody>
+  </table>
+
+  <!-- PAYMENT -->
+ 
+<div class="payment-details">
+  <h3>Payment Details</h3>
+
+  <div class="pay-row">
+    <span>Subtotal :</span>
+    <span>₹<span id="subTotal"></span></span>
+  </div>
+
+  <div class="pay-row">
+    <span>Previous Remaining :</span>
+    <span>₹<span id="prevRemain"></span></span>
+  </div>
+
+  <div class="pay-row">
+    <span>Total :</span>
+    <span>₹<span id="grandTotal"></span></span>
+  </div>
+
+  <div class="pay-row">
+    <span>Paid :</span>
+    <span>₹<span id="paidAmt"></span></span>
+  </div>
+
+  <div class="pay-row remaining">
+    <span>Current Remaining :</span>
+    <span>₹<span id="currRemain"></span></span>
+  </div>
+</div>
+
+
+
+
+
+  <!-- PDF ACTIONS -->
+  <div class="pdf-actions">
+    <button id="viewPdf">View PDF</button>
+    <button id="downloadPdf">Download PDF</button>
+    <!-- <button id="sharePdf">Share PDF</button> -->
+  </div>
+
+  <button id="doneBtn">Done</button>
+
+</div>
+
+<script src="../js_components/preview.js"></script>
+</body>
+</html>
